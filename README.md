@@ -185,42 +185,6 @@ Key decisions from testing:
 ## 📈 Current Project Status
 
 ### **✅ Completed**
-*   **Phase 12 (Nav2)**: Nav2 installed, launched, tuned, and CLI `NavigateToPose` goals completed.
-*   **Phase 13 (AMCL)**: Saved map loaded through Nav2, AMCL active, and `map -> base_link` TF verified.
-*   **Phase 14 (Waypoint Navigation)**: Successfully mapped `Salle_Hall` and `Local_Club`. AprilTag detection routes directly to Nav2 destinations via dynamic `locations.json` mapping.
-*   **Phase 15 (Orchestration & Dashboard)**: Admin dashboard added with Foxglove integration. Features layered runtime controls (`robot_body`, `localization`, `nav2`) executed safely via a Python `launch_server`. Protected by a custom `login.html` layer enforcing role-based access.
-*   **Phase 19 (Voice Interaction)**: Integrated dynamic Voice Activity Detection (VAD) for fluid conversations. High-quality speech synthesis via ElevenLabs API (George voice).
-*   **Hardware Stabilization**: Motor and encoder issues resolved. ESP32 Low-Level Controller (micro-ROS) is fully tuned and driving smoothly.
-*   **System Services**: Core components (`echo-dashboard`, `echo-launch-server`, `echo-rosbridge`) configured as reliable `systemd` user services starting automatically on boot.
-
-### **⏳ Still In Progress**
-*   **OpenClaw AI Brain Integration**: Tie the established Nav2 goals to the high-level OpenClaw Telegram AI so Echo can execute complex multi-step reasoning goals autonomously.
-*   **Cloud Orchestration**: Transition from local dashboard to Firebase/TURN server cloud link for remote global control.
-
----
-
-## 🖥 RViz From Windows Laptop
-
-RViz2 can be shown on the Windows laptop using VcXsrv over Tailscale.
-
-On Windows PowerShell:
-
-```powershell
-& "C:\Program Files\VcXsrv\vcxsrv.exe" :0 -multiwindow -clipboard -nowgl -ac
-```
-
-Then SSH into the Pi from PowerShell, not VS Code SSH, and run:
-
-```bash
-export DISPLAY=100.106.212.8:0.0
-source /opt/ros/jazzy/setup.bash
-source ~/ros2_ws/install/setup.bash
-rviz2 -d /opt/ros/jazzy/share/nav2_bringup/rviz/nav2_default_view.rviz
-```
-
-Security note: `-ac` disables X access control, so use it only on the private Tailscale test network.
-
----
 
 ## Foxglove From Browser
 Foxglove is the preferred lightweight UI for mapping, quick Nav2 testing, and ROS 2 visualization.
