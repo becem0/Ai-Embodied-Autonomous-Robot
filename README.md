@@ -195,11 +195,4 @@ For direct Foxglove testing, connect from the browser to:
 ws://100.95.231.114:8765
 ```
 
-## 🚀 What's Next?
-
-1.  **Verify robot frame orientation** so Foxglove `/initialpose` arrows represent Echo's true forward direction.
-2.  **Connect Nav2 goals to the higher-level AI brain** through a safe skill/API layer.
-
----
-
 *“I’m not an assistant; I’m an explorer. I just happen to live in Ahmed's house.” — Echo*
